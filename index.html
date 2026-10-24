@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>FRUTIX - Flat Graphic Identity & Sains Nutrisi Buah</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            forest: '#1E5128',
+            tangerine: '#FF6B35',
+            sun: '#F7C04A',
+            cream: '#FAF8F1',
+            dark: '#191A19'
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Custom Stylesheet (Flat Graphic Identity, Strictly No Gradients) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-0 md:p-6 lg:p-8 antialiased selection:bg-[#2D7D32] selection:text-white">
+
+  <!-- MOCKUP CONTAINER (Bingkai Kartu Kontras Tinggi ala Referensi Desain) -->
+  <div class="mockup-container content-pad-mobile">
+
+    <!-- TOP NAVIGATION BAR (Sticky Ramping & Bersih di Desktop, Bebas Menutupi Konten) -->
+    <header class="sticky top-0 z-40 bg-white border-b-2 border-[#191A19] px-4 md:px-8 py-3.5 flex items-center justify-between rounded-t-[28px] md:rounded-t-[30px]">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-[#2D7D32] border-2 border-[#191A19] flex items-center justify-center font-black text-xl text-white shadow-sm">
+          F
+        </div>
+        <div>
+          <span class="font-heading font-black text-xl tracking-tight text-[#191A19] block leading-none">
+            FRUTIX<span class="text-[#2D7D32]">.LAB</span>
+          </span>
+          <span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">
+            Fresh Fruit Science & Wellness
+          </span>
+        </div>
+      </div>
+
+      <!-- Desktop Nav Pills (Solid Minimalist, High Contrast) -->
+      <nav class="hidden lg:flex items-center gap-1.5 bg-[#FAF8F1] p-1.5 rounded-full border-2 border-[#191A19] text-xs font-black desktop-nav-pills">
+        <button data-nav-target="fruits" class="px-4 py-1.5 rounded-full bg-[#2D7D32] text-white transition-all">
+          Katalog Buah
+        </button>
+        <button data-nav-target="comparison" class="px-4 py-1.5 rounded-full text-[#191A19] hover:bg-white transition-all">
+          Utuh vs Dijus
+        </button>
+        <button data-nav-target="blender" class="px-4 py-1.5 rounded-full text-[#191A19] hover:bg-white transition-all">
+          Fusion Lab
+        </button>
+        <button data-nav-target="medical" class="px-4 py-1.5 rounded-full text-[#191A19] hover:bg-white transition-all">
+          Terapi Penyakit
+        </button>
+        <button data-nav-target="wellness" class="px-4 py-1.5 rounded-full text-[#191A19] hover:bg-white transition-all">
+          Kebugaran
+        </button>
+        <button data-nav-target="calculator" class="px-4 py-1.5 rounded-full text-[#191A19] hover:bg-white transition-all">
+          Kalkulator Porsi
+        </button>
+      </nav>
+
+      <!-- Action & Sound Toggle -->
+      <div class="flex items-center gap-2">
+        <button id="soundToggleBtn" title="Suara Efek" class="w-9 h-9 rounded-full bg-[#FAF8F1] border-2 border-[#191A19] flex items-center justify-center hover:bg-white transition-colors">
+          <i data-lucide="volume-2" class="w-4 h-4 text-[#2D7D32]"></i>
+        </button>
+        <button onclick="switchSection('blender')" class="flat-btn flat-btn-green px-3.5 py-1.5 text-xs uppercase font-extrabold">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Racik Buah
+        </button>
+      </div>
+    </header>
+
+    <!-- HERO SECTION (Bold Flat Graphic Style ala Gambar Referensi) -->
+    <section class="p-6 md:p-12 lg:p-14 border-b-2 border-[#191A19] bg-[#FAF8F1]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7 space-y-5">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border-2 border-[#191A19] text-[#1E5128] font-black text-xs uppercase tracking-wider shadow-sm">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#FF6B35]"></span>
+            Riset Gizi Klinis & Identitas Grafis Solid
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#191A19] tracking-tight leading-[1.08]">
+            Kekuatan Murni Buah: <br>
+            <span class="text-[#FF6B35]">Makan Utuh</span> vs <span class="text-[#1E5128]">Dijus Segar</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-slate-700 leading-relaxed max-w-xl font-medium">
+            Ketahui perbedaan ilmiah penyerapan serat pektin, indeks glikemik, dan enzim saat buah dikunyah langsung vs di-blender. Padukan buah di <strong>Fruit Fusion Lab</strong> dan temukan terapi buah untuk penyakit Anda.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button onclick="switchSection('fruits')" class="flat-btn flat-btn-green px-6 py-3 text-xs uppercase font-black">
+              JELAJAHI KATALOG BUAH
+            </button>
+            <button onclick="switchSection('medical')" class="flat-btn flat-btn-white px-6 py-3 text-xs uppercase font-black">
+              KONSULTASI PENYAKIT
+            </button>
+          </div>
+
+          <!-- Feature Bullets (High Contrast Solid Blocks) -->
+          <div class="grid grid-cols-3 gap-3 pt-4 border-t-2 border-[#191A19] max-w-md">
+            <div class="p-3 bg-[#2D7D32] text-white rounded-xl border-2 border-[#191A19]">
+              <div class="text-2xl font-black text-white">12+</div>
+              <div class="text-[10px] font-bold text-white/90 uppercase">Buah Vektor</div>
+            </div>
+            <div class="p-3 bg-[#FF6B35] text-white rounded-xl border-2 border-[#191A19]">
+              <div class="text-2xl font-black text-white">100%</div>
+              <div class="text-[10px] font-bold text-white/90 uppercase">Riset Klinis</div>
+            </div>
+            <div class="p-3 bg-[#F7C04A] text-[#191A19] rounded-xl border-2 border-[#191A19]">
+              <div class="text-2xl font-black text-[#191A19]">8+</div>
+              <div class="text-[10px] font-bold text-[#191A19]/80 uppercase">Terapi Medis</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero: Interactive Fruit Showcase Box (Solid Graphic Identity) -->
+        <div class="lg:col-span-5">
+          <div class="flat-card bg-white p-5 border-2 border-[#191A19]">
+            
+            <!-- Top Controls -->
+            <div class="flex items-center justify-between mb-3 pb-2 border-b-2 border-[#191A19]">
+              <div>
+                <span id="heroFruitTag" class="text-[10px] font-black text-slate-500 uppercase tracking-wider block">
+                  Bentuk Utuh (Whole Fruit)
+                </span>
+                <h3 id="heroFruitTitle" class="text-xl font-black text-[#191A19]">Jeruk Manis</h3>
+              </div>
+              <button id="heroToggleSliceBtn" class="flat-btn flat-btn-green px-3.5 py-1.5 text-xs font-black">
+                <i data-lucide="scissors" class="w-3.5 h-3.5"></i> Belah Buah
+              </button>
+            </div>
+
+            <!-- Crisp Vector Graphic Stage -->
+            <div class="w-full h-56 bg-[#FAF8F1] rounded-2xl border-2 border-[#191A19] p-4 flex items-center justify-center relative overflow-hidden">
+              <div id="heroFruitSvgContainer" class="w-44 h-44 flex items-center justify-center transition-transform duration-200">
+                <!-- Injected by JavaScript -->
+              </div>
+            </div>
+
+            <!-- Quick Fruit Selectors -->
+            <div class="mt-4 pt-3 border-t-2 border-[#191A19]">
+              <div class="text-[10px] font-black text-[#191A19] uppercase tracking-wider mb-2">
+                Pilih Buah Unggulan:
+              </div>
+              <div class="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+                <button onclick="setHeroFruit('jeruk')" data-hero-picker="jeruk" class="px-3 py-1 rounded-full text-xs font-black border-2 border-[#191A19] bg-[#191A19] text-white">
+                  Jeruk
+                </button>
+                <button onclick="setHeroFruit('apel')" data-hero-picker="apel" class="px-3 py-1 rounded-full text-xs font-black border-2 border-[#191A19] bg-white text-[#191A19]">
+                  Apel
+                </button>
+                <button onclick="setHeroFruit('alpukat')" data-hero-picker="alpukat" class="px-3 py-1 rounded-full text-xs font-black border-2 border-[#191A19] bg-white text-[#191A19]">
+                  Alpukat
+                </button>
+                <button onclick="setHeroFruit('semangka')" data-hero-picker="semangka" class="px-3 py-1 rounded-full text-xs font-black border-2 border-[#191A19] bg-white text-[#191A19]">
+                  Semangka
+                </button>
+                <button onclick="setHeroFruit('naga')" data-hero-picker="naga" class="px-3 py-1 rounded-full text-xs font-black border-2 border-[#191A19] bg-white text-[#191A19]">
+                  Naga
+                </button>
+                <button onclick="setHeroFruit('kiwi')" data-hero-picker="kiwi" class="px-3 py-1 rounded-full text-xs font-black border-2 border-[#191A19] bg-white text-[#191A19]">
+                  Kiwi
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 1: KATALOG BUAH & ANATOMI VEKTOR LENGKAP -->
+    <section id="section-fruits" class="p-6 md:p-12 lg:p-14 border-b-2 border-[#191A19]">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+        <div>
+          <span class="flat-pill bg-[#F7C04A] text-[#191A19] mb-2">ENSIKLOPEDIA GIZI</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-[#191A19]">
+            Katalog Buah & Anatomi Irisan
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1 font-medium">
+            Klik tombol <strong>Lihat Buah & Irisan</strong> pada setiap kartu untuk membedah anatomi daging buah dan perbandingan utuh vs jus.
+          </p>
+        </div>
+
+        <!-- Search Input -->
+        <div class="relative w-full md:w-72">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+          <input id="fruitSearchInput" type="text" placeholder="Cari apel, kalium, gizi..." 
+                 class="w-full pl-10 pr-4 py-2.5 rounded-full border-2 border-[#191A19] text-xs font-bold focus:outline-none focus:bg-[#FAF8F1] transition-colors bg-white">
+        </div>
+      </div>
+
+      <!-- Filter Chips -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 scrollbar-none">
+        <button data-filter="all" class="px-4 py-1.5 rounded-full text-xs font-black transition-all bg-[#191A19] text-white border-2 border-[#191A19] whitespace-nowrap">
+          Semua Buah
+        </button>
+        <button data-filter="low_gi" class="px-4 py-1.5 rounded-full text-xs font-black transition-all bg-white text-[#191A19] border-2 border-[#191A19] hover:bg-[#FAF8F1] whitespace-nowrap">
+          🩸 Rendah Gula (Low GI)
+        </button>
+        <button data-filter="vit_c" class="px-4 py-1.5 rounded-full text-xs font-black transition-all bg-white text-[#191A19] border-2 border-[#191A19] hover:bg-[#FAF8F1] whitespace-nowrap">
+          🍊 Tinggi Vitamin C
+        </button>
+        <button data-filter="gerd_safe" class="px-4 py-1.5 rounded-full text-xs font-black transition-all bg-white text-[#191A19] border-2 border-[#191A19] hover:bg-[#FAF8F1] whitespace-nowrap">
+          🛡️ Ramah Asam Lambung
+        </button>
+        <button data-filter="cardio" class="px-4 py-1.5 rounded-full text-xs font-black transition-all bg-white text-[#191A19] border-2 border-[#191A19] hover:bg-[#FAF8F1] whitespace-nowrap">
+          ❤️ Kesehatan Jantung & Tensi
+        </button>
+      </div>
+
+      <!-- Fruit Cards Grid -->
+      <div id="fruitsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected by JavaScript -->
+      </div>
+    </section>
+
+    <!-- SECTION 2: PERBANDINGAN SAINS: DIMAKAN UTUH VS DIJUS -->
+    <section id="section-comparison" class="p-6 md:p-12 lg:p-14 border-b-2 border-[#191A19] bg-[#FAF8F1]">
+      <div class="max-w-3xl mx-auto text-center mb-8">
+        <span class="flat-pill bg-[#1E5128] text-white mb-2">ANATOMI BIOKIMIA</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[#191A19]">
+          Makan Buah Utuh vs Dijus
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-700 mt-2 font-medium">
+          Dua cara konsumsi dengan dampak metabolik yang berbeda. Pilihan terbaik bergantung pada kondisi saluran cerna, target glukosa, dan tujuan aktivitas Anda.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        
+        <!-- Kolom Makan Buah Utuh -->
+        <div class="flat-card p-6 md:p-8 bg-white border-2 border-[#191A19]">
+          <div class="flex items-center gap-3 mb-4 pb-3 border-b-2 border-[#191A19]">
+            <div class="w-12 h-12 rounded-xl bg-[#1E5128] text-white flex items-center justify-center font-black text-xl border-2 border-[#191A19]">
+              🍏
+            </div>
+            <div>
+              <span class="flat-pill bg-[#1E5128] text-white text-[9px]">Pilihan Standar Emas</span>
+              <h3 class="text-2xl font-black text-[#191A19]">Dimakan Utuh (Whole)</h3>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-700 mb-5 leading-relaxed font-medium">
+            Mempertahankan integritas matriks dinding sel tumbuhan. Serat larut (pektin) dan serat tidak larut (selulosa) bertindak sebagai jaring pelindung mekanis usus.
+          </p>
+
+          <div class="space-y-3">
+            <div class="p-3 bg-[#FAF8F1] rounded-xl border border-[#191A19]">
+              <span class="font-black text-xs text-[#1E5128] block mb-0.5">Kurva Gula Darah Landai & Stabil</span>
+              <p class="text-[11px] text-slate-600 leading-snug">Jaring serat gel memperlambat pencernaan sehingga glukosa dan fruktosa masuk ke aliran darah secara berkala tanpa spike insulin.</p>
+            </div>
+
+            <div class="p-3 bg-[#FAF8F1] rounded-xl border border-[#191A19]">
+              <span class="font-black text-xs text-[#1E5128] block mb-0.5">Kenyang Lebih Lama (Hormon Leptin)</span>
+              <p class="text-[11px] text-slate-600 leading-snug">Proses mengunyah dan peregangan mekanis dinding lambung memicu pelepasan hormon leptin penekan rasa lapar berlebih.</p>
+            </div>
+
+            <div class="p-3 bg-[#FAF8F1] rounded-xl border border-[#191A19]">
+              <span class="font-black text-xs text-[#1E5128] block mb-0.5">Bahan Bakar Mikrobioma Usus Besar</span>
+              <p class="text-[11px] text-slate-600 leading-snug">Serat yang tidak tercerna difermentasi bakteri baik menjadi asam lemak rantai pendek (SCFA) pelindung kanker kolon.</p>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-3 border-t-2 border-[#191A19] text-xs font-black text-[#1E5128]">
+            ✓ Dianjurkan untuk: Pejuang Diabetes, Defisit Kalori, Kolesterol, & Sembelit.
+          </div>
+        </div>
+
+        <!-- Kolom Apabila Dijus -->
+        <div class="flat-card p-6 md:p-8 bg-white border-2 border-[#191A19]">
+          <div class="flex items-center gap-3 mb-4 pb-3 border-b-2 border-[#191A19]">
+            <div class="w-12 h-12 rounded-xl bg-[#FF6B35] text-white flex items-center justify-center font-black text-xl border-2 border-[#191A19]">
+              🍹
+            </div>
+            <div>
+              <span class="flat-pill bg-[#FF6B35] text-white text-[9px]">Terapi Penyerapan Cepat</span>
+              <h3 class="text-2xl font-black text-[#191A19]">Dijus / Diblender</h3>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-700 mb-5 leading-relaxed font-medium">
+            Menghancurkan dinding sel buah secara mekanis sehingga mikronutrien, cairan elektrolit, dan antioksidan terbebas seketika untuk diserap tubuh.
+          </p>
+
+          <div class="space-y-3">
+            <div class="p-3 bg-[#FAF8F1] rounded-xl border border-[#191A19]">
+              <span class="font-black text-xs text-[#FF6B35] block mb-0.5">Bioavailabilitas Mikronutrien Seketika</span>
+              <p class="text-[11px] text-slate-600 leading-snug">Sistem pencernaan tidak perlu memecah serat kasar. Vitamin C dan polifenol langsung masuk ke peredaran darah.</p>
+            </div>
+
+            <div class="p-3 bg-[#FAF8F1] rounded-xl border border-[#191A19]">
+              <span class="font-black text-xs text-[#FF6B35] block mb-0.5">Rehidrasi Seluler & Pemulihan Sakit</span>
+              <p class="text-[11px] text-slate-600 leading-snug">Sangat prima untuk rehidrasi setelah latihan kardio berat, pemulihan demam berdarah (DBD), atau tubuh sangat lemas.</p>
+            </div>
+
+            <div class="p-3 bg-[#FAF8F1] rounded-xl border border-[#191A19]">
+              <span class="font-black text-xs text-[#FF6B35] block mb-0.5">Kemudahan Bagi Lansia & Pasien</span>
+              <p class="text-[11px] text-slate-600 leading-snug">Memudahkan pemenuhan nutrisi harian bagi lansia yang mengalami kendala mengunyah atau sedang radang tenggorokan.</p>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-3 border-t-2 border-[#191A19] text-xs font-black text-[#FF6B35]">
+            ⚠️ Aturan Medis: Jangan disaring ampasnya, hindari gula tambahan, dan minum segera.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: FRUIT FUSION LAB (BLENDER ALKIMIA BUAH) -->
+    <section id="section-blender" class="p-6 md:p-12 lg:p-14 border-b-2 border-[#191A19]">
+      <div class="max-w-3xl mx-auto text-center mb-8">
+        <span class="flat-pill bg-[#F7C04A] text-[#191A19] mb-2">FITUR INTERAKTIF</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[#191A19]">
+          Fruit Fusion Lab: Blender Alkimia Buah
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 mt-2 font-medium">
+          Menggabungkan buah tertentu melahirkan <strong>sinergi biokimia baru</strong> yang melipatgandakan khasiatnya. Pilih 1 hingga 3 buah, lalu klik tombol racik!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Sisi Kiri: Rak Pemilihan Buah -->
+        <div class="lg:col-span-5 space-y-3">
+          <div class="flex items-center justify-between pb-2 border-b-2 border-[#191A19]">
+            <h3 class="font-black text-xs text-[#191A19] uppercase tracking-wider">Pilih Buah ke Blender:</h3>
+            <span class="text-xs font-black text-[#FF6B35]">Maksimal 3 Buah</span>
+          </div>
+
+          <div id="blenderIngredientGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-2 max-h-[360px] overflow-y-auto p-1">
+            <!-- Injected by JavaScript -->
+          </div>
+
+          <div class="p-3 bg-[#FAF8F1] rounded-xl border-2 border-[#191A19] text-xs text-slate-700">
+            <strong class="text-[#191A19]">💡 Tips Sinergi Emas:</strong> Coba padukan <strong>Jambu + Jeruk + Kiwi</strong> untuk megadosis kolagen, atau <strong>Semangka + Delima</strong> untuk kelenturan pembuluh darah tensi.
+          </div>
+        </div>
+
+        <!-- Sisi Tengah: Tabung Mesin Blender Flat -->
+        <div class="lg:col-span-3 text-center flex flex-col items-center">
+          <div class="mb-3">
+            <span class="text-[10px] font-black uppercase text-slate-400">Buah di Blender:</span>
+            <div id="blenderSelectedList" class="flex flex-wrap justify-center gap-1 mt-1 min-h-[30px]">
+              <!-- Injected by JavaScript -->
+            </div>
+          </div>
+
+          <!-- Tabung Blender Fisik Flat Solid -->
+          <div class="flat-blender-jar">
+            <div id="blenderLiquid" class="flat-blender-liquid"></div>
+            <div class="flat-blender-blade"></div>
+          </div>
+
+          <!-- Tombol Aksi Blend -->
+          <button id="blendActionBtn" class="flat-btn flat-btn-orange px-6 py-3 text-xs uppercase font-black mt-4 w-full">
+            <i data-lucide="sparkles" class="w-4 h-4"></i> RACIK KOMBINASI SEKARANG!
+          </button>
+        </div>
+
+        <!-- Sisi Kanan: Kartu Hasil Analisis Sinergi Medis -->
+        <div class="lg:col-span-4">
+          <div id="blenderResultCard">
+            <!-- Injected by JavaScript -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: KONSULTASI PENYAKIT & TERAPI BUAH MEDIS -->
+    <section id="section-medical" class="p-6 md:p-12 lg:p-14 border-b-2 border-[#191A19] bg-[#FAF8F1]">
+      <div class="max-w-3xl mx-auto text-center mb-8">
+        <span class="flat-pill bg-[#FF6B35] text-white mb-2">REKOMENDASI MEDIS</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[#191A19]">
+          Konsultasi Buah Berdasarkan Penyakit
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-700 mt-2 font-medium">
+          Pilih keluhan penyakit yang sedang diderita untuk melihat buah terbaik, aturan minum, dan <strong>daftar buah yang DILARANG</strong> untuk mencegah bahaya komplikasi.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- List Penyakit Tabs -->
+        <div class="lg:col-span-4 space-y-2">
+          <div class="text-xs font-black text-[#191A19] uppercase tracking-wider mb-2">
+            Pilih Penyakit / Keluhan:
+          </div>
+          <div id="diseaseTabs" class="space-y-2">
+            <!-- Injected by JavaScript -->
+          </div>
+        </div>
+
+        <!-- Detail Terapi Buah & Peringatan Bahaya -->
+        <div class="lg:col-span-8">
+          <div id="diseaseDetailContainer">
+            <!-- Injected by JavaScript -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: KEBUGARAN SEHARI-HARI (DAILY WELLNESS) -->
+    <section id="section-wellness" class="p-6 md:p-12 lg:p-14 border-b-2 border-[#191A19]">
+      <div class="max-w-3xl mx-auto text-center mb-8">
+        <span class="flat-pill bg-[#1E5128] text-white mb-2">TARGET KEBUGARAN</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[#191A19]">
+          Rekomendasi Kebugaran Sehari-hari
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-600 mt-2 font-medium">
+          Dukung stamina harian, ketajaman fokus kerja, kualitas tidur lelap, dan kesehatan kulit dengan jadwal konsumsi buah yang pas.
+        </p>
+      </div>
+
+      <div id="wellnessGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Injected by JavaScript -->
+      </div>
+    </section>
+
+    <!-- SECTION 6: KALKULATOR KEBUTUHAN PORSI BUAH HARIAN -->
+    <section id="section-calculator" class="p-6 md:p-12 lg:p-14 border-b-2 border-[#191A19] bg-[#FAF8F1]">
+      <div class="max-w-4xl mx-auto flat-card p-6 md:p-10 bg-white border-2 border-[#191A19]">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          
+          <div class="md:col-span-6 space-y-3.5">
+            <span class="flat-pill bg-[#F7C04A] text-[#191A19] text-[9px]">STANDAR WHO & KEMENKES RI</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-[#191A19]">
+              Kalkulator Kebutuhan Porsi Buah Harian
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed font-medium">
+              Hitung takaran porsi buah segar harian Anda secara akurat berdasarkan berat badan dan intensitas kegiatan fisik.
+            </p>
+
+            <div class="space-y-3 pt-2">
+              <div>
+                <label class="block text-xs font-black text-[#191A19] mb-1">Berat Badan Anda (kg):</label>
+                <input id="calcWeight" type="number" value="65" min="30" max="150" 
+                       class="w-full px-3.5 py-2 rounded-xl border-2 border-[#191A19] text-sm font-black focus:outline-none focus:bg-[#FAF8F1]">
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-black text-[#191A19] mb-1">Usia (Tahun):</label>
+                  <input id="calcAge" type="number" value="28" min="10" max="100" 
+                         class="w-full px-3.5 py-2 rounded-xl border-2 border-[#191A19] text-sm font-black focus:outline-none focus:bg-[#FAF8F1]">
+                </div>
+                <div>
+                  <label class="block text-xs font-black text-[#191A19] mb-1">Aktivitas Fisik:</label>
+                  <select id="calcActivity" class="w-full px-3.5 py-2 rounded-xl border-2 border-[#191A19] text-xs font-black focus:outline-none bg-white">
+                    <option value="light">Ringan (Duduk)</option>
+                    <option value="moderate" selected>Sedang (Aktif)</option>
+                    <option value="heavy">Berat (Olahraga Berat)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hasil Rekomendasi Porsi (Solid Fresh Green Box) -->
+          <div class="md:col-span-6 bg-[#2D7D32] text-white p-6 md:p-8 rounded-2xl border-2 border-[#191A19] space-y-4">
+            <span class="text-[10px] font-black uppercase tracking-widest text-[#F7C04A]">Rekomendasi Harian Anda</span>
+            
+            <div>
+              <div id="resFruitGrams" class="text-4xl font-black">195 gram</div>
+              <div class="text-xs text-white/90 font-bold">Asupan Buah Segar Bersih</div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 pt-3 border-t-2 border-white/30">
+              <div>
+                <div class="text-[9px] uppercase font-black text-[#F7C04A]">Setara Dengan</div>
+                <div id="resFruitServings" class="text-lg font-black">2 - 3 Porsi</div>
+              </div>
+              <div>
+                <div class="text-[9px] uppercase font-black text-[#F7C04A]">Hidrasi Alami</div>
+                <div id="resFruitHydration" class="text-lg font-black">~165 ml Air</div>
+              </div>
+            </div>
+
+            <div id="resFruitGuidance" class="p-3.5 bg-white/10 rounded-xl border border-white/20 text-[11px] leading-snug">
+              📋 <strong>Panduan Konsumsi Presisi:</strong> Konsumsi target <strong>195 gram</strong> (2 - 3 Porsi) ini secara terbagi (misal 1 porsi saat sarapan & 1 porsi sore hari) untuk menjaga energi stabil dan penyerapan mikronutrien optimal tanpa memicu lonjakan glukosa darah.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="p-6 md:p-8 bg-white text-slate-500 text-xs flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="w-6 h-6 rounded bg-[#FF6B35] text-white font-black text-xs flex items-center justify-center border border-[#191A19]">F</span>
+        <span class="font-black text-[#191A19] text-sm">FRUTIX LAB</span>
+        <span>— Sains Nutrisi & Keajaiban Buah Alami.</span>
+      </div>
+      <div class="font-bold text-[11px]">
+        Disusun berdasarkan referensi klinis USDA, WHO, & Kemenkes RI.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- MODAL: INSPEKTOR BUAH & ANATOMI IRISAN VEKTOR -->
+  <div id="fruitDetailModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-6 flat-modal-overlay overflow-y-auto">
+    <div class="bg-white w-full max-w-4xl rounded-3xl border-3 border-[#191A19] shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col">
+      
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b-2 border-[#191A19] flex items-center justify-between bg-[#FAF8F1]">
+        <div>
+          <h3 id="modalFruitName" class="text-xl sm:text-2xl font-black text-[#191A19]">Nama Buah</h3>
+          <span id="modalFruitScientific" class="text-xs font-semibold text-slate-500 italic">Scientific Name</span>
+        </div>
+
+        <button id="closeModalBtn" class="w-9 h-9 rounded-full bg-white border-2 border-[#191A19] flex items-center justify-center font-black hover:bg-slate-100 transition-colors">
+          ✕
+        </button>
+      </div>
+
+      <!-- Quick Fruit Picker Bar inside Modal -->
+      <div class="px-4 py-2 bg-white border-b border-[#191A19] flex items-center gap-1.5 overflow-x-auto scrollbar-none">
+        <span class="text-[10px] font-black text-slate-400 uppercase tracking-wider shrink-0 mr-1">Pilih Buah:</span>
+        <div id="modalFruitPickerBar" class="flex items-center gap-1.5">
+          <!-- Injected by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="p-4 sm:p-6 overflow-y-auto space-y-5">
+        
+        <!-- Large High-Contrast Flat Vector Illustration Area -->
+        <div class="relative bg-[#FAF8F1] rounded-2xl border-2 border-[#191A19] p-6 flex flex-col items-center justify-center min-h-[260px]">
+          
+          <div class="w-48 h-48 sm:w-56 sm:h-56 flex items-center justify-center">
+            <div id="modalFruitSvgContainer" class="w-full h-full flex items-center justify-center">
+              <!-- Injected by JavaScript -->
+            </div>
+          </div>
+
+          <!-- Bottom Visual Toolbar -->
+          <div class="mt-4 pt-3 border-t-2 border-[#191A19] w-full flex flex-wrap items-center justify-between gap-2">
+            <span id="modalModeBadge" class="flat-pill bg-white text-[#191A19]">
+              Bentuk Utuh (Whole Fruit)
+            </span>
+
+            <button id="toggleModalSliceBtn" class="flat-btn flat-btn-yellow px-4 py-1.5 text-xs font-black">
+              <i data-lucide="scissors" class="w-4 h-4"></i> Tampilkan Irisan (Cross-Section)
+            </button>
+          </div>
+        </div>
+
+        <!-- Tagline & Flavor Profile -->
+        <div class="p-3.5 rounded-2xl bg-white border-2 border-[#191A19] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <span class="text-[9px] font-black uppercase text-[#FF6B35] tracking-wider">Peran Gizi Utama</span>
+            <div id="modalFruitTagline" class="font-black text-[#191A19] text-sm sm:text-base">Tagline</div>
+          </div>
+          <div class="text-xs text-slate-700">
+            <strong>Rasa:</strong> <span id="modalFlavorProfile">-</span>
+          </div>
+        </div>
+
+        <!-- Profil Biokimia & Nutrisi -->
+        <div>
+          <h4 class="text-xs font-black text-[#191A19] uppercase tracking-wider mb-2">Profil Gizi Klinis (Per 100g):</h4>
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2 text-center text-xs">
+            <div class="p-2.5 bg-[#FAF8F1] rounded-xl border border-[#191A19]">
+              <div class="text-[9px] text-slate-400 font-bold">Kalori</div>
+              <div id="modalCalories" class="font-black text-[#191A19] mt-0.5">-</div>
+            </div>
+            <div class="p-2.5 bg-[#FAF8F1] rounded-xl border border-[#191A19]">
+              <div class="text-[9px] text-slate-400 font-bold">Vitamin C</div>
+              <div id="modalVitC" class="font-black text-[#FF6B35] mt-0.5">-</div>
+            </div>
+            <div class="p-2.5 bg-[#FAF8F1] rounded-xl border border-[#191A19]">
+              <div class="text-[9px] text-slate-400 font-bold">Serat</div>
+              <div id="modalFiber" class="font-black text-[#1E5128] mt-0.5">-</div>
+            </div>
+            <div class="p-2.5 bg-[#FAF8F1] rounded-xl border border-[#191A19]">
+              <div class="text-[9px] text-slate-400 font-bold">Kalium</div>
+              <div id="modalPotassium" class="font-black text-[#191A19] mt-0.5">-</div>
+            </div>
+            <div class="p-2.5 bg-[#FAF8F1] rounded-xl border border-[#191A19]">
+              <div class="text-[9px] text-slate-400 font-bold">Air</div>
+              <div id="modalWater" class="font-black text-[#191A19] mt-0.5">-</div>
+            </div>
+            <div class="p-2.5 bg-[#FAF8F1] rounded-xl border border-[#191A19]">
+              <div class="text-[9px] text-slate-400 font-bold">Indeks GI</div>
+              <div id="modalGI" class="font-black text-[#1E5128] mt-0.5">-</div>
+            </div>
+            <div class="p-2.5 bg-[#FAF8F1] rounded-xl border border-[#191A19] col-span-2 sm:col-span-1">
+              <div class="text-[9px] text-slate-400 font-bold">Antioksidan</div>
+              <div id="modalAntioxidant" class="font-black text-[#FF6B35] mt-0.5 text-[10px] truncate">-</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Senyawa Aktif Farmakologis -->
+        <div>
+          <h4 class="text-xs font-black text-[#191A19] uppercase tracking-wider mb-2">Senyawa Fitokimia Utama:</h4>
+          <ul id="modalActiveCompounds" class="grid grid-cols-1 md:grid-cols-3 gap-2">
+            <!-- Injected by JavaScript -->
+          </ul>
+        </div>
+
+        <!-- Khasiat: Dimakan Utuh vs Dijus -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+          <div class="p-4 bg-white border-2 border-[#1E5128] rounded-2xl">
+            <h5 class="font-black text-[#1E5128] text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <i data-lucide="check" class="w-4 h-4"></i> Khasiat Dimakan Utuh:
+            </h5>
+            <ul id="modalWholeBenefits" class="space-y-1.5">
+              <!-- Injected by JavaScript -->
+            </ul>
+          </div>
+
+          <div class="p-4 bg-white border-2 border-[#FF6B35] rounded-2xl">
+            <h5 class="font-black text-[#FF6B35] text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+              <i data-lucide="check" class="w-4 h-4"></i> Khasiat Apabila Dijus:
+            </h5>
+            <ul id="modalJuicedBenefits" class="space-y-1.5">
+              <!-- Injected by JavaScript -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Waktu & Peringatan -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs pt-2 border-t-2 border-[#191A19]">
+          <div class="p-3 bg-[#FAF8F1] rounded-xl border border-[#191A19]">
+            <span class="font-black text-[#191A19] block mb-0.5">⏰ Waktu Terbaik Makan:</span>
+            <span id="modalBestTime" class="text-slate-700">-</span>
+          </div>
+          <div class="p-3 bg-[#FAF8F1] rounded-xl border border-[#191A19]">
+            <span class="font-black text-[#FF6B35] block mb-0.5">⚠️ Perhatian Medis:</span>
+            <span id="modalPrecautions" class="text-slate-700">-</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE BOTTOM NAVIGATION BAR -->
+  <div class="mobile-nav-bar">
+    <button data-nav-target="fruits" class="mobile-nav-btn active text-[#2D7D32]">
+      <i data-lucide="apple" class="w-5 h-5"></i>
+      <span>Katalog</span>
+    </button>
+    <button data-nav-target="blender" class="mobile-nav-btn text-[#191A19]">
+      <i data-lucide="sparkles" class="w-5 h-5"></i>
+      <span>Fusion Lab</span>
+    </button>
+    <button data-nav-target="medical" class="mobile-nav-btn text-[#191A19]">
+      <i data-lucide="heart-pulse" class="w-5 h-5"></i>
+      <span>Penyakit</span>
+    </button>
+    <button data-nav-target="wellness" class="mobile-nav-btn text-[#191A19]">
+      <i data-lucide="activity" class="w-5 h-5"></i>
+      <span>Kebugaran</span>
+    </button>
+    <button data-nav-target="comparison" class="mobile-nav-btn text-[#191A19]">
+      <i data-lucide="scale" class="w-5 h-5"></i>
+      <span>Utuh vs Jus</span>
+    </button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="fruit-vectors.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

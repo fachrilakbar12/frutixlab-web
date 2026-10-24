@@ -1,0 +1,304 @@
+/**
+ * FRUTIX - FLAT GRAPHIC DESIGN STYLING
+ * Cohesive solid color palette:
+ * - Solid Forest Green: #1E5128
+ * - Bright Tangerine Orange: #FF6B35
+ * - Warm Sun Yellow: #F7C04A
+ * - Soft Vanilla Cream: #FAF8F1
+ * - Deep Charcoal / Black: #191A19
+ * STRICTLY NO GRADIENTS, HIGH CONTRAST FULL-COLOR BLOCKS
+ */
+
+:root {
+  --fresh-green: #2D7D32;
+  --forest-green: #1E5128;
+  --emerald-fresh: #388E3C;
+  --tangerine-orange: #FF6B35;
+  --sun-yellow: #F7C04A;
+  --vanilla-cream: #FAF8F1;
+  --deep-dark: #191A19;
+  --pure-white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  color: var(--deep-dark);
+  background-color: var(--fresh-green);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: clip;
+}
+
+/* Typography */
+h1, h2, h3, .font-heading {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.03em;
+  font-weight: 900;
+}
+
+/* Outer Mockup Frame (Matches user uploaded reference visual) */
+.mockup-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 32px;
+  background-color: var(--pure-white);
+  border: 3px solid var(--deep-dark);
+  box-shadow: 12px 12px 0px var(--deep-dark);
+  position: relative;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--vanilla-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--forest-green);
+  border-radius: 4px;
+}
+
+/* Flat High-Contrast Solid Cards */
+.flat-card {
+  background-color: var(--pure-white);
+  border: 2px solid var(--deep-dark);
+  border-radius: 20px;
+  box-shadow: 5px 5px 0px var(--deep-dark);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.flat-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px var(--deep-dark);
+}
+
+.flat-card-green {
+  background-color: var(--forest-green);
+  color: var(--pure-white);
+  border: 2px solid var(--deep-dark);
+  border-radius: 20px;
+  box-shadow: 5px 5px 0px var(--deep-dark);
+}
+
+.flat-card-yellow {
+  background-color: var(--sun-yellow);
+  color: var(--deep-dark);
+  border: 2px solid var(--deep-dark);
+  border-radius: 20px;
+  box-shadow: 5px 5px 0px var(--deep-dark);
+}
+
+.flat-card-orange {
+  background-color: var(--tangerine-orange);
+  color: var(--pure-white);
+  border: 2px solid var(--deep-dark);
+  border-radius: 20px;
+  box-shadow: 5px 5px 0px var(--deep-dark);
+}
+
+.flat-card-cream {
+  background-color: var(--vanilla-cream);
+  color: var(--deep-dark);
+  border: 2px solid var(--deep-dark);
+  border-radius: 20px;
+  box-shadow: 5px 5px 0px var(--deep-dark);
+}
+
+/* Solid Buttons */
+.flat-btn {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  border-radius: 9999px;
+  border: 2px solid var(--deep-dark);
+  box-shadow: 4px 4px 0px var(--deep-dark);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  user-select: none;
+}
+
+.flat-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px var(--deep-dark);
+}
+
+.flat-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--deep-dark);
+}
+
+.flat-btn-black {
+  background-color: var(--deep-dark);
+  color: var(--pure-white);
+}
+
+.flat-btn-orange {
+  background-color: var(--tangerine-orange);
+  color: var(--pure-white);
+}
+
+.flat-btn-green {
+  background-color: var(--fresh-green);
+  color: var(--pure-white);
+}
+
+.flat-btn-yellow {
+  background-color: var(--sun-yellow);
+  color: var(--deep-dark);
+}
+
+.flat-btn-white {
+  background-color: var(--pure-white);
+  color: var(--deep-dark);
+}
+
+/* Solid Color Category Pills */
+.flat-pill {
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  border: 1.5px solid var(--deep-dark);
+  display: inline-block;
+}
+
+/* Flat Blender Simulation */
+.flat-blender-jar {
+  position: relative;
+  width: 190px;
+  height: 250px;
+  background-color: var(--pure-white);
+  border: 3px solid var(--deep-dark);
+  border-radius: 14px 14px 28px 28px;
+  box-shadow: 6px 6px 0px var(--deep-dark);
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.flat-blender-liquid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0%;
+  background-color: var(--tangerine-orange);
+  transition: height 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease;
+  border-top: 3px solid var(--deep-dark);
+}
+
+.flat-blender-blade {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 10px;
+  background-color: var(--deep-dark);
+  border-radius: 4px;
+}
+
+.blending .flat-blender-blade {
+  animation: spinFlatBlade 0.08s infinite linear;
+}
+
+.blending .flat-blender-liquid {
+  animation: jitterLiquid 0.15s infinite alternate ease-in-out;
+}
+
+@keyframes spinFlatBlade {
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(360deg); }
+}
+
+@keyframes jitterLiquid {
+  0% { transform: scaleY(0.97); }
+  100% { transform: scaleY(1.03); }
+}
+
+/* Solid Flat Bubble */
+.flat-bubble {
+  position: absolute;
+  bottom: 5px;
+  background-color: var(--pure-white);
+  border: 1.5px solid var(--deep-dark);
+  border-radius: 50%;
+  animation: flatRiseUp 1s infinite linear;
+}
+
+@keyframes flatRiseUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-140px);
+    opacity: 0;
+  }
+}
+
+/* Mobile Bottom Navigation Bar */
+.mobile-nav-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+  .mockup-container {
+    border-radius: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+  }
+  .mobile-nav-bar {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 68px;
+    background-color: var(--pure-white);
+    border-top: 3px solid var(--deep-dark);
+    z-index: 50;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 4px 6px 4px;
+  }
+  .mobile-nav-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    color: var(--deep-dark);
+    font-size: 0.68rem;
+    font-weight: 800;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .mobile-nav-btn.active {
+    color: var(--tangerine-orange);
+  }
+  .content-pad-mobile {
+    padding-bottom: 84px;
+  }
+}
+
+/* Modal Overlay */
+.flat-modal-overlay {
+  background-color: rgba(25, 26, 25, 0.7);
+}
